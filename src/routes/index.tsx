@@ -9,21 +9,21 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion";
 const heroSlides = [
   {
     slug: "rollladen",
-    image: "/hero/rollladen.png",
+    image: "/hero/rollladen.jpg",
     eyebrow: "Schutz rund ums Jahr",
     title: "Rollladen",
     cta: "Mehr zu Rollladen",
   },
   {
     slug: "raffstores",
-    image: "/hero/sonnenschutz.png",
+    image: "/hero/sonnenschutz.jpg",
     eyebrow: "Tageslicht lenken",
     title: "Sonnenschutz",
     cta: "Mehr zu Sonnenschutz",
   },
   {
     slug: "fenster",
-    image: "/hero/fenster.png",
+    image: "/hero/fenster.jpg",
     eyebrow: "Internorm [1st] window partner",
     title: "Fenster & Türen",
     cta: "Mehr zu Fenster & Türen",
