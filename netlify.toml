@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# SSR is served by the Nitro "netlify" preset via an internal function in
+# .netlify/functions-internal/server (auto-detected by Netlify, path "/*").
