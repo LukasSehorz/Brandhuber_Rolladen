@@ -24,7 +24,7 @@ const heroSlides = [
   {
     slug: "fenster",
     image: "/hero/fenster.jpg",
-    eyebrow: "Internorm [1st] window partner",
+    eyebrow: "Gaulhofer Fachpartner",
     title: "Fenster & Türen",
     cta: "Mehr zu Fenster & Türen",
   },
@@ -41,7 +41,7 @@ function HeroSlider() {
   const slide = heroSlides[active];
 
   return (
-    <section className="relative -mt-[80px] h-screen min-h-[640px] w-full overflow-hidden">
+    <section className="relative -mt-[80px] h-[100svh] min-h-[640px] w-full overflow-hidden">
       {heroSlides.map((s, i) => (
         <div
           key={s.slug}
@@ -59,8 +59,8 @@ function HeroSlider() {
           style={{ textShadow: "0 2px 18px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.45)" }}
         >
           <div key={active} className="reveal">
-            <div className="text-xs uppercase tracking-[0.35em] text-copper mb-5">{slide.eyebrow}</div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl text-background">{slide.title}</h1>
+            <div className="text-xs uppercase tracking-[0.35em] text-white/90 mb-5">{slide.eyebrow}</div>
+            <h1 className="text-[clamp(2.25rem,9vw,6rem)] text-background">{slide.title}</h1>
           </div>
           <Link
             to="/leistungen/$slug"
@@ -80,8 +80,12 @@ function HeroSlider() {
             type="button"
             onClick={() => setActive(i)}
             aria-label={`Slide ${i + 1}: ${s.title}`}
-            className={`h-[3px] transition-all duration-500 ${i === active ? "w-10 bg-background" : "w-5 bg-background/40 hover:bg-background/70"}`}
-          />
+            className="group flex h-10 items-center"
+          >
+            <span
+              className={`block h-[3px] transition-all duration-500 ${i === active ? "w-10 bg-background" : "w-5 bg-background/40 group-hover:bg-background/70"}`}
+            />
+          </button>
         ))}
       </div>
     </section>
@@ -92,7 +96,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Brandhuber GmbH – Rollladen, Sonnenschutz, Fenster | Dorfen" },
-      { name: "description", content: "Traditionsreicher Fachbetrieb für Rollladen, Sonnenschutz, Fenster, Türen und Smart Home. Internorm [1st] window partner in Dorfen, Bayern." },
+      { name: "description", content: "Traditionsreicher Fachbetrieb für Rollladen, Sonnenschutz, Fenster, Türen und Smart Home. Gaulhofer Fachpartner in Dorfen, Bayern." },
       { property: "og:title", content: "Brandhuber GmbH – Fachbetrieb in Dorfen" },
       { property: "og:description", content: "Schatten. Sicherheit. Stil. Seit Jahrzehnten Ihr Fachbetrieb für Rollladen, Sonnenschutz und Fenster im Landkreis Erding." },
       { property: "og:url", content: "/" },
@@ -114,20 +118,20 @@ function Index() {
           {/* Text */}
           <Stagger stagger={0.1}>
             <StaggerItem>
-              <SectionEyebrow>Internorm · [1st] window partner</SectionEyebrow>
+              <SectionEyebrow>Gaulhofer · Fachpartner</SectionEyebrow>
             </StaggerItem>
             <StaggerItem>
               <h2 className="mt-6 max-w-xl text-4xl md:text-5xl text-charcoal">
-                Internorm – Europas Nr.&nbsp;1 für Fenster und Haustüren
+                Gaulhofer – Premium-Fenster und Haustüren aus Österreich
               </h2>
             </StaggerItem>
 
             <StaggerItem className="mt-10 space-y-6 text-base md:text-lg leading-relaxed text-muted-foreground">
               <p>
-                <strong className="font-medium text-charcoal">Internorm</strong> ist Europas führende Fenstermarke – ein österreichisches Familienunternehmen, das seit Jahrzehnten für kompromisslose Qualität steht. Ob <strong className="font-medium text-charcoal">Kunststoff- oder Holz-Alu-Fenster</strong>: Spitzenwerte bei <strong className="font-medium text-charcoal">Wärmedämmung, Sicherheit und Schallschutz</strong> treffen auf klares, zeitloses Design.
+                <strong className="font-medium text-charcoal">Gaulhofer</strong> ist ein österreichisches Traditionsunternehmen, das seit Jahrzehnten für hochwertige Fenster und Haustüren steht. Ob <strong className="font-medium text-charcoal">Kunststoff- oder Holz-Alu-Fenster</strong>: Spitzenwerte bei <strong className="font-medium text-charcoal">Wärmedämmung, Sicherheit und Schallschutz</strong> treffen auf klares, zeitloses Design.
               </p>
               <p>
-                Als ausgezeichneter <strong className="font-medium text-charcoal">[1st] window partner</strong> – der höchsten Partnerstufe – führen wir das <strong className="font-medium text-charcoal">komplette Internorm-Programm</strong>. In unserer Ausstellung in Dorfen beraten wir Sie persönlich und ausführlich. Lieferung und Montage kommen aus einer Hand – inklusive <strong className="font-medium text-charcoal">Beiputz, Dämmung, Einstellung und Einweisung</strong>.
+                Als <strong className="font-medium text-charcoal">Gaulhofer Fachpartner</strong> führen wir das <strong className="font-medium text-charcoal">komplette Gaulhofer-Programm</strong>. In unserer Ausstellung in Dorfen beraten wir Sie persönlich und ausführlich. Lieferung und Montage kommen aus einer Hand – inklusive <strong className="font-medium text-charcoal">Dämmung, Einstellung und Einweisung</strong>.
               </p>
             </StaggerItem>
 
@@ -154,18 +158,18 @@ function Index() {
             <div className="relative aspect-[4/5] overflow-hidden bg-greige">
               <img
                 src="/internorm/internorm-fenster.jpg"
-                alt="Internorm Fenster mit schmalen Rahmen in einem hellen, modernen Wohnraum mit Blick in den Garten"
+                alt="Gaulhofer Fenster mit schmalen Rahmen in einem hellen, modernen Wohnraum mit Blick in den Garten"
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
               />
             </div>
 
             {/* partner seal */}
-            <div className="absolute -left-4 bottom-10 bg-charcoal px-6 py-5 sm:-left-6">
-              <div className="font-serif text-lg leading-none text-background">Internorm</div>
+            <div className="absolute -left-4 bottom-10 bg-charcoal px-6 py-5 sm:-left-6 section-dark">
+              <div className="font-serif text-lg leading-none text-background">Gaulhofer</div>
               <div className="mt-2.5 flex items-center gap-2">
                 <span className="h-px w-5 bg-copper" />
-                <span className="text-[0.6rem] uppercase tracking-[0.28em] text-copper">[1st] Partner</span>
+                <span className="text-[0.6rem] uppercase tracking-[0.28em] text-copper">Fachpartner</span>
               </div>
             </div>
           </Reveal>
@@ -182,9 +186,9 @@ function Index() {
             </h2>
           </Reveal>
 
-          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" stagger={0.08} amount={0.1}>
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:auto-rows-fr" stagger={0.08} amount={0.1}>
             {services.map((s) => (
-              <StaggerItem key={s.slug}>
+              <StaggerItem key={s.slug} className="h-full">
                 <ServiceCard service={s} />
               </StaggerItem>
             ))}
@@ -224,7 +228,7 @@ function Index() {
               {
                 icon: Award,
                 title: "Fachgerechte Montage",
-                text: "Eigenes Montageteam, sauber, termintreu und mit Beiputzarbeiten.",
+                text: "Eigenes Montageteam, sauber und termintreu.",
                 image: "/why/montage.jpg",
                 alt: "Fachgerechte Montage – Monteur befestigt einen Raffstore an der Fassade eines modernen Hauses",
               },
@@ -253,7 +257,7 @@ function Index() {
                     className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-charcoal/75 via-charcoal/15 to-transparent"
                   />
                   {/* Index-Ziffer (Editorial) */}
-                  <span className="absolute bottom-2.5 left-4 font-serif text-5xl leading-none text-background transition-colors duration-500 group-hover:text-copper">
+                  <span className="absolute bottom-2.5 left-4 font-serif text-5xl leading-none text-background transition-colors duration-500 group-hover:text-background/70">
                     0{i + 1}
                   </span>
                   {/* Icon-Chip */}
@@ -272,13 +276,13 @@ function Index() {
       </section>
 
       {/* PARTNERS */}
-      <section className="bg-charcoal py-20">
+      <section className="bg-charcoal py-20 section-dark">
         <div className="container-prose">
           <Reveal className="text-center text-xs uppercase tracking-[0.3em] text-background/50 mb-10">
             Wir arbeiten mit den führenden Herstellern
           </Reveal>
           <Stagger className="flex flex-wrap items-center justify-center gap-x-16 gap-y-6" stagger={0.07}>
-            {["Internorm", "Somfy", "Alulux", "Warema", "TaHoma", "VELUX"].map((p) => (
+            {["Gaulhofer", "Somfy", "Alulux", "Warema", "TaHoma", "VELUX"].map((p) => (
               <StaggerItem key={p} className="font-serif text-2xl text-background/75 hover:text-copper transition-colors duration-300" y={16}>
                 {p}
               </StaggerItem>

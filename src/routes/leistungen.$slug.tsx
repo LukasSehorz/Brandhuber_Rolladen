@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteLayout, SectionEyebrow, PageHero, CTASection } from "@/components/site-layout";
 import type { Service } from "@/lib/services";
@@ -53,6 +54,10 @@ function ServicePage() {
 
   return (
     <SiteLayout>
+      {/* key per slug: remounts the whole detail subtree on navigation so the
+          scroll-reveal animations (Stagger/Reveal) re-initialise instead of
+          getting stuck at opacity:0 when switching between services. */}
+      <Fragment key={service.slug}>
       <PageHero
         eyebrow="Leistung"
         title={service.title}
@@ -159,6 +164,7 @@ function ServicePage() {
           </div>
         </section>
       )}
+      </Fragment>
     </SiteLayout>
   );
 }

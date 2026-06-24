@@ -18,6 +18,10 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
+  // "solid" = opaque header: when scrolled OR when the mobile menu is open.
+  // Keeps the logo/links/hamburger readable instead of dark-on-dark over the hero.
+  const solid = scrolled || open;
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
@@ -30,21 +34,22 @@ export function SiteHeader() {
   }, [open]);
 
   return (
+    <>
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/95 backdrop-blur border-b border-border" : "bg-transparent"
+        solid ? "bg-background/95 backdrop-blur border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container-prose flex items-center justify-between gap-6" style={{ paddingBlock: scrolled ? "0.875rem" : "1.5rem", transition: "padding 400ms ease" }}>
+      <div className="container-prose flex items-center justify-between gap-3 sm:gap-6" style={{ paddingBlock: scrolled ? "0.875rem" : "1.5rem", transition: "padding 400ms ease" }}>
         <Link to="/" className="flex items-center gap-3 group min-w-0" aria-label="Brandhuber GmbH – Startseite">
-          <img src="/logo.png" alt="Brandhuber GmbH" className="h-8 sm:h-9 w-auto" />
+          <img src="/logo.png" alt="Brandhuber GmbH" className="h-6 sm:h-8 md:h-9 w-auto max-w-full" />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8 text-sm">
+        <nav className="hidden lg:flex items-center gap-5 text-sm">
           {nav.map((item) => (
             <div key={item.label} className="relative group">
               {item.hasMenu ? (
-                <span className={`link-underline inline-flex items-center gap-1 transition-colors cursor-default ${scrolled ? "text-charcoal/80 group-hover:text-charcoal" : "text-white/90 group-hover:text-white"}`}>
+                <span className={`inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 transition-colors cursor-default ${solid ? "text-charcoal/80 group-hover:text-charcoal" : "text-white/90 group-hover:text-white"}`}>
                   {item.label}
                   <ChevronDown className="h-3 w-3" />
                 </span>
@@ -52,7 +57,7 @@ export function SiteHeader() {
                 <Link
                   to={item.to as string}
                   activeOptions={{ exact: item.to === "/" }}
-                  className={`link-underline inline-flex items-center gap-1 transition-colors data-[status=active]:text-copper ${scrolled ? "text-charcoal/80 hover:text-charcoal" : "text-white/90 hover:text-white"}`}
+                  className={`inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 transition-colors ${solid ? "text-charcoal/80 hover:text-charcoal data-[status=active]:bg-white data-[status=active]:text-charcoal data-[status=active]:shadow-sm" : "text-white/90 hover:text-white data-[status=active]:bg-charcoal data-[status=active]:text-white"}`}
                 >
                   {item.label}
                 </Link>
@@ -90,17 +95,19 @@ export function SiteHeader() {
           </Link>
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 -mr-2 text-charcoal"
+            className={`lg:hidden -mr-1 grid h-10 w-10 shrink-0 place-items-center rounded-md transition-colors ${solid ? "text-charcoal hover:bg-charcoal/5" : "bg-charcoal/60 text-white ring-1 ring-white/15 backdrop-blur-sm"}`}
             aria-label="Menü"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
+    </header>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — sibling of <header> so its fixed positioning is viewport-relative
+          (a backdrop-filter on the header would otherwise become its containing block). */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-[64px] bottom-0 bg-background border-t border-border overflow-y-auto transition-all duration-500 ${
+        className={`lg:hidden fixed inset-x-0 top-[72px] bottom-0 z-40 bg-background border-t border-border overflow-y-auto transition-all duration-500 ${
           open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
@@ -152,6 +159,6 @@ export function SiteHeader() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }

@@ -3,12 +3,17 @@ import { services } from "@/lib/services";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-charcoal text-background/80">
+    <footer className="bg-charcoal text-background/80 section-dark">
       <div className="container-prose py-20 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="font-serif text-2xl text-background">BRANDHUBER</div>
+          <img
+            src="/logo.png"
+            alt="Brandhuber GmbH"
+            className="h-9 w-auto"
+            style={{ filter: "brightness(0) invert(1)" }}
+          />
           <p className="mt-4 text-sm leading-relaxed text-background/60 max-w-xs">
-            Ihr Fachbetrieb für Rollladen, Sonnenschutz, Fenster und Gebäudesicherheit. Aus Dorfen für die Landkreise Erding, Mühldorf, Ebersberg und München.
+            Ihr Fachbetrieb für Rollladen, Sonnenschutz und Fenster. Aus Dorfen für die Landkreise Erding, Mühldorf, Ebersberg und München.
           </p>
           <div className="mt-6 h-px w-12 bg-copper" />
         </div>

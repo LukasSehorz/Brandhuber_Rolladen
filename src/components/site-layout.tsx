@@ -33,9 +33,9 @@ export function PageHero({
       <div className="absolute inset-0 flex items-end pb-16 md:pb-24">
         <div className="container-prose">
           {eyebrow && (
-            <div className="reveal text-xs uppercase tracking-[0.3em] text-copper mb-5">{eyebrow}</div>
+            <div className="reveal text-xs uppercase tracking-[0.3em] text-white/90 mb-5">{eyebrow}</div>
           )}
-          <h1 className="reveal max-w-3xl text-4xl md:text-6xl text-background" style={{ animationDelay: "100ms" }}>
+          <h1 className="reveal max-w-3xl text-[clamp(1.875rem,6vw,3.75rem)] text-background" style={{ animationDelay: "100ms" }}>
             {title}
           </h1>
           {subtitle && (
@@ -56,7 +56,7 @@ export function PageHero({
 
 export function CTASection() {
   return (
-    <section className="bg-charcoal text-background py-24 md:py-32">
+    <section className="bg-charcoal text-background py-24 md:py-32 section-dark">
       <Stagger className="container-prose text-center" stagger={0.1}>
         <StaggerItem className="text-xs uppercase tracking-[0.3em] text-copper mb-6">Persönliche Beratung</StaggerItem>
         <StaggerItem>
@@ -70,7 +70,7 @@ export function CTASection() {
         <StaggerItem className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="/kontakt"
-            className="inline-flex items-center bg-copper hover:bg-background hover:text-charcoal text-background px-8 py-4 text-sm font-medium tracking-wide transition-colors duration-500"
+            className="inline-flex items-center bg-background hover:bg-charcoal hover:text-background text-charcoal px-8 py-4 text-sm font-medium tracking-wide transition-colors duration-500"
           >
             Angebot anfragen
           </a>

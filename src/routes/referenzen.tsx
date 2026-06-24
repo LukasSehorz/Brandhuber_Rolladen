@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero, CTASection, SectionEyebrow } from "@/components/site-layout";
 import { useState } from "react";
-import { services } from "@/lib/services";
-import { Reveal, Stagger, motion } from "@/components/motion";
+import { Stagger, motion } from "@/components/motion";
 
 const galleryItem = {
   hidden: { opacity: 0, y: 24 },
@@ -37,11 +36,7 @@ const gallery = [
 ];
 
 function Page() {
-  const [filter, setFilter] = useState<string>("alle");
   const [lightbox, setLightbox] = useState<string | null>(null);
-
-  const filtered = filter === "alle" ? gallery : gallery.filter((g) => g.cat === filter);
-  const cats = ["alle", ...Array.from(new Set(gallery.map((g) => g.cat)))];
 
   return (
     <SiteLayout>
@@ -54,25 +49,8 @@ function Page() {
 
       <section className="py-20">
         <div className="container-prose">
-          <Reveal className="flex flex-wrap gap-2 mb-10">
-            {cats.map((c) => {
-              const label = c === "alle" ? "Alle" : services.find((s) => s.slug === c)?.title ?? c;
-              return (
-                <button
-                  key={c}
-                  onClick={() => setFilter(c)}
-                  className={`px-4 py-2 text-xs uppercase tracking-[0.15em] border transition-colors ${
-                    filter === c ? "bg-charcoal text-background border-charcoal" : "border-border text-charcoal/70 hover:border-copper hover:text-copper"
-                  }`}
-                >
-                  {label}
-                </button>
-              );
-            })}
-          </Reveal>
-
           <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" stagger={0.06} amount={0.1}>
-            {filtered.map((g) => (
+            {gallery.map((g) => (
               <motion.button
                 key={g.img}
                 onClick={() => setLightbox(g.img)}
@@ -87,7 +65,6 @@ function Page() {
                 />
                 <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/40 transition-colors flex items-end p-6">
                   <div className="text-background text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="text-xs uppercase tracking-[0.2em] text-copper mb-1">{services.find((s) => s.slug === g.cat)?.title}</div>
                     {g.title}
                   </div>
                 </div>

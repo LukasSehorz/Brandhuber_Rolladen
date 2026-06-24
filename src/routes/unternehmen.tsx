@@ -7,7 +7,7 @@ export const Route = createFileRoute("/unternehmen")({
   head: () => ({
     meta: [
       { title: "Unternehmen – Brandhuber GmbH | Handwerk mit Anspruch seit 1969" },
-      { name: "description", content: "Die Brandhuber GmbH in Dorfen: seit 1969 Ihr Fachbetrieb für Fenster, Sonnenschutz, Toranlagen, Alarmanlagen und Hausautomation in den Landkreisen Erding, Mühldorf, Ebersberg und München." },
+      { name: "description", content: "Die Brandhuber GmbH in Dorfen: seit 1969 Ihr Fachbetrieb für Fenster, Sonnenschutz, Toranlagen und Hausautomation in den Landkreisen Erding, Mühldorf, Ebersberg und München." },
       { property: "og:title", content: "Unternehmen – Brandhuber GmbH" },
       { property: "og:url", content: "/unternehmen" },
     ],
@@ -22,13 +22,6 @@ const werte = [
   { n: "03", t: "Verlässlich", d: "Ob Neubau, Reparatur oder Wartung – termintreu und auch nach der Montage für Sie da." },
 ];
 
-const team = [
-  { name: "Familie Brandhuber", role: "Geschäftsführung", phone: "08081 2142" },
-  { name: "Vertrieb & Beratung", role: "Persönlich für Sie da", phone: "08081 2142" },
-  { name: "Aufmaß & Planung", role: "Technische Aufnahme", phone: "08081 2142" },
-  { name: "Montage-Team", role: "Eigene Monteure", phone: "08081 2142" },
-];
-
 function Page() {
   return (
     <SiteLayout>
@@ -41,7 +34,7 @@ function Page() {
           <>
             <Link
               to="/kontakt"
-              className="inline-flex items-center bg-copper text-background px-7 py-3.5 text-sm font-medium hover:bg-background hover:text-charcoal transition-colors duration-300"
+              className="inline-flex items-center bg-background text-charcoal px-7 py-3.5 text-sm font-medium hover:bg-charcoal hover:text-background transition-colors duration-300"
             >
               Beratung anfragen
             </Link>
@@ -92,7 +85,7 @@ function Page() {
             </StaggerItem>
             <StaggerItem className="mt-7 space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                Die Brandhuber GmbH ist Ihr Ansprechpartner in den Landkreisen Erding, Mühldorf, Ebersberg und München – rund um Fenster, Sonnenschutz, Toranlagen, Alarmanlagen und Hausautomation.
+                Die Brandhuber GmbH ist Ihr Ansprechpartner in den Landkreisen Erding, Mühldorf, Ebersberg und München – rund um Fenster, Sonnenschutz, Toranlagen und Hausautomation.
               </p>
               <p>
                 Qualität seit 1969: Über 50 Jahre Praxis und Erfahrung, vom Rollladen über Markisen bis hin zu Garagentoren. Aus einem klassischen Handwerksbetrieb ist ein modernes Fachunternehmen geworden – ohne zu vergessen, woher es kommt.
@@ -139,7 +132,7 @@ function Page() {
               <h2 className="text-4xl md:text-5xl text-charcoal">Modernes Handwerk, regional verwurzelt.</h2>
             </StaggerItem>
             <StaggerItem className="mt-7 text-muted-foreground leading-relaxed">
-              Wir verbinden jahrzehntelange Erfahrung mit aktueller Technik. Premium-Produkte, sauber verarbeitet – inklusive allem, was dazugehört: Beiputz, Dämmung, Einstellung und Einweisung.
+              Wir verbinden jahrzehntelange Erfahrung mit aktueller Technik. Premium-Produkte, sauber verarbeitet – inklusive allem, was dazugehört: Dämmung, Einstellung und Einweisung.
             </StaggerItem>
             <StaggerItem className="mt-8 flex flex-wrap gap-3">
               {["Neubau", "Reparatur", "Wartung"].map((tag) => (
@@ -156,7 +149,7 @@ function Page() {
       <section className="py-24 md:py-32">
         <div className="container-prose grid lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
           {/* Dunkle Ankerkarte – liefert den Kontrast */}
-          <Reveal className="lg:col-span-4 bg-charcoal text-background p-10 md:p-12 flex flex-col justify-between min-h-[320px] relative overflow-hidden" y={36}>
+          <Reveal className="lg:col-span-4 bg-charcoal text-background p-10 md:p-12 flex flex-col justify-between min-h-[320px] relative overflow-hidden section-dark" y={36}>
             <motion.div
               className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-copper/10 blur-2xl"
               aria-hidden
@@ -189,50 +182,6 @@ function Page() {
               </StaggerItem>
             ))}
           </Stagger>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-24 md:py-32 bg-greige overflow-hidden">
-        <div className="container-prose">
-          <Reveal>
-            <SectionEyebrow>Team</SectionEyebrow>
-            <h2 className="text-4xl md:text-5xl text-charcoal max-w-2xl">Die Menschen hinter Brandhuber.</h2>
-          </Reveal>
-          <div className="mt-14 grid md:grid-cols-12 gap-12 lg:gap-16 items-stretch">
-            <Reveal className="md:col-span-7 relative" y={36}>
-              <div className="absolute inset-0 -translate-x-4 -translate-y-4 border border-copper/40 hidden md:block" aria-hidden />
-              <div className="relative h-full overflow-hidden">
-                <motion.img
-                  src="/img/unternehmen/team-werkstatt.jpg"
-                  alt="Werkstatt und Arbeitsumgebung des Brandhuber-Teams"
-                  className="h-full w-full object-cover aspect-[3/2] md:aspect-auto md:min-h-[360px]"
-                  loading="lazy"
-                  whileHover={{ scale: 1.04 }}
-                  transition={{ duration: 0.6 }}
-                />
-              </div>
-            </Reveal>
-            <Stagger className="md:col-span-5 flex flex-col justify-center border-t border-border" stagger={0.1}>
-              {team.map((m) => (
-                <StaggerItem
-                  key={m.name}
-                  className="group flex items-center justify-between gap-4 py-5 border-b border-border"
-                >
-                  <div className="transition-transform duration-300 group-hover:translate-x-1.5">
-                    <h3 className="text-lg text-charcoal">{m.name}</h3>
-                    <div className="text-sm text-copper mt-0.5">{m.role}</div>
-                  </div>
-                  <a
-                    href={`tel:${m.phone.replace(/\s/g, "")}`}
-                    className="shrink-0 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-charcoal transition-colors"
-                  >
-                    <Phone className="h-4 w-4" /> {m.phone}
-                  </a>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
         </div>
       </section>
 

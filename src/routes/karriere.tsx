@@ -8,7 +8,7 @@ export const Route = createFileRoute("/karriere")({
   head: () => ({
     meta: [
       { title: "Karriere – Stellenangebote | Brandhuber GmbH Dorfen" },
-      { name: "description", content: "Werde Teil des Brandhuber-Teams in Dorfen. Offene Stellen für Rollladen- und Sonnenschutzmechatroniker, Monteure und Auszubildende. Quereinsteiger willkommen." },
+      { name: "description", content: "Werde Teil des Brandhuber-Teams in Dorfen. Offene Stellen für Rollladen- und Sonnenschutzmechatroniker, Monteure und Quereinsteiger willkommen." },
       { property: "og:title", content: "Karriere bei Brandhuber GmbH" },
       { property: "og:url", content: "/karriere" },
     ],
@@ -53,10 +53,10 @@ const jobs: Job[] = [
   {
     title: "Monteur:in für Fenster & Türen (m/w/d)",
     type: "Vollzeit · Unbefristet",
-    desc: "Fachgerechter Austausch von Fenstern und Türen, inklusive Beiputz- und Dämmarbeiten.",
+    desc: "Fachgerechter Austausch von Fenstern und Türen, inklusive Dämm- und Abdichtungsarbeiten.",
     aufgaben: [
       "Aus- und Einbau von Fenstern und Haustüren nach RAL-Richtlinien",
-      "Beiputz-, Dämm- und Abdichtungsarbeiten",
+      "Dämm- und Abdichtungsarbeiten",
       "Endkontrolle, Einstellung und Übergabe an die Kund:innen",
       "Saubere Dokumentation der ausgeführten Arbeiten",
     ],
@@ -70,28 +70,6 @@ const jobs: Job[] = [
       "Lebenslauf",
       "Relevante Arbeitszeugnisse",
       "Frühestmöglicher Eintrittstermin",
-    ],
-  },
-  {
-    title: "Auszubildende:r Rollladen- und Sonnenschutzmechatronik (m/w/d)",
-    type: "Ausbildung · 3 Jahre",
-    desc: "Starte deine Ausbildung in einem zukunftssicheren Handwerk – mit modernem Werkzeug und gutem Team.",
-    aufgaben: [
-      "Du lernst Montage, Wartung und Reparatur von Sonnenschutz- und Rollladenanlagen",
-      "Begleitung erfahrener Kolleg:innen direkt auf der Baustelle",
-      "Umgang mit modernen Werkzeugen, Motoren und Steuerungen",
-      "Berufsschulunterricht ergänzt die Praxis im Betrieb",
-    ],
-    profil: [
-      "Mindestens qualifizierender Mittelschulabschluss",
-      "Interesse an Technik und Handwerk",
-      "Handwerkliches Geschick und räumliches Vorstellungsvermögen",
-      "Zuverlässigkeit, Motivation und Teamgeist",
-    ],
-    unterlagen: [
-      "Lebenslauf",
-      "Die letzten beiden Schulzeugnisse",
-      "Ggf. Nachweise über Praktika",
     ],
   },
   {

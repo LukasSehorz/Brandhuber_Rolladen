@@ -2,6 +2,13 @@
 @source "../src";
 @import "tw-animate-css";
 
+/* Nur das &-Zeichen in Überschriften: normaler Ampersand statt Playfairs Kalligrafie-Form */
+@font-face {
+  font-family: "AmpersandNormal";
+  src: local("Georgia"), local("Times New Roman"), local("Times");
+  unicode-range: U+0026;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -31,7 +38,7 @@
   --color-greige: var(--greige);
   --color-copper: var(--copper);
   --color-copper-deep: var(--copper-deep);
-  --font-serif: "Fraunces", Georgia, serif;
+  --font-serif: "AmpersandNormal", "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
@@ -44,8 +51,8 @@
   --greige: oklch(0.945 0.012 80);              /* #F4F1EC */
   --charcoal: oklch(0.22 0.005 60);             /* #1C1C1A */
   --charcoal-soft: oklch(0.28 0.005 60);        /* #2A2A28 */
-  --copper: #E00E1B;                            /* Brandhuber Logo-Rot */
-  --copper-deep: #B80B16;                        /* dunkleres Rot für Hover/Tiefe */
+  --copper: #000000;                            /* Marke: Schwarz (vormals Logo-Rot) */
+  --copper-deep: #000000;                        /* Marke: Schwarz */
 
   --card: oklch(1 0 0);
   --card-foreground: var(--charcoal);
@@ -64,6 +71,12 @@
   --border: oklch(0.88 0.008 70);
   --input: oklch(0.88 0.008 70);
   --ring: var(--copper);
+}
+
+/* Auf dunklen Flächen wäre ein schwarzer Akzent unsichtbar – dort hell rendern.
+   (@theme inline kompiliert text-copper zu var(--copper), daher --copper überschreiben.) */
+.section-dark {
+  --copper: var(--background);
 }
 
 @layer base {

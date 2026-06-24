@@ -44,7 +44,7 @@ function Page() {
           <>
             <a
               href="#anfrage"
-              className="inline-flex items-center justify-center gap-2 bg-copper px-8 py-4 text-sm font-medium tracking-wide text-background transition-colors duration-500 hover:bg-background hover:text-charcoal"
+              className="inline-flex items-center justify-center gap-2 bg-background px-8 py-4 text-sm font-medium tracking-wide text-charcoal transition-colors duration-500 hover:bg-charcoal hover:text-background"
             >
               Anfrage senden <ArrowRight className="h-4 w-4" />
             </a>
@@ -127,7 +127,7 @@ function Page() {
 
           {/* Contact card (dark) */}
           <aside className="md:col-span-5">
-            <Reveal className="bg-charcoal p-8 sm:p-10 lg:p-12" y={36}>
+            <Reveal className="bg-charcoal p-8 sm:p-10 lg:p-12 section-dark" y={36}>
               <SectionEyebrow>Anschrift</SectionEyebrow>
               <address className="not-italic font-serif text-2xl leading-snug text-background">
                 BRANDHUBER GmbH<br />
@@ -146,7 +146,7 @@ function Page() {
                 href={MAPS_DIRECTIONS}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-10 inline-flex w-full items-center justify-center gap-2 bg-copper px-6 py-4 text-sm font-medium tracking-wide text-background transition-colors duration-500 hover:bg-background hover:text-charcoal"
+                className="mt-10 inline-flex w-full items-center justify-center gap-2 bg-background px-6 py-4 text-sm font-medium tracking-wide text-charcoal transition-colors duration-500 hover:bg-charcoal hover:text-background"
               >
                 Route planen <ArrowRight className="h-4 w-4" />
               </a>

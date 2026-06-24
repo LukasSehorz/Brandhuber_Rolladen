@@ -15,19 +15,20 @@ function Page() {
       <PageHero eyebrow="Rechtliches" title="Impressum" image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80" />
       <section className="py-24">
         <div className="container-prose max-w-3xl prose prose-stone space-y-6 text-charcoal/85">
-          <p className="text-sm text-muted-foreground italic">Hinweis: Diese rechtlichen Inhalte werden vom Auftraggeber final geliefert.</p>
           <h2 className="text-2xl">Angaben gemäß § 5 TMG</h2>
-          <p>BRANDHUBER GmbH<br />Erdinger Str. 15A<br />84405 Dorfen</p>
-          <h2 className="text-2xl">Kontakt</h2>
-          <p>Telefon: 08081 2142<br />Fax: 08081 4533<br />E-Mail: [bitte ergänzen]</p>
-          <h2 className="text-2xl">Vertretungsberechtigte Geschäftsführung</h2>
-          <p>[Name der Geschäftsführung]</p>
-          <h2 className="text-2xl">Registereintrag</h2>
-          <p>Amtsgericht [...] / HRB [...]</p>
-          <h2 className="text-2xl">Umsatzsteuer-ID</h2>
-          <p>DE[...]</p>
-          <h2 className="text-2xl">Haftungsausschluss</h2>
-          <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+          <p>Brandhuber Fenster- und Rollladenbau GmbH<br />Erdinger Straße 15A<br />84405 Dorfen</p>
+          <h2 className="text-2xl">Geschäftsführer</h2>
+          <p>Christopher Ortler</p>
+          <h2 className="text-2xl">Umsatzsteuer-ID-Nummer</h2>
+          <p>DE 224649886</p>
+          <h2 className="text-2xl">Verantwortlich gemäß TMG</h2>
+          <p>Christopher Ortler<br />Tel. 08081 2142<br />E-Mail: info@brandhuber.gmbh</p>
+          <h2 className="text-2xl">Fotos</h2>
+          <p>Brandhuber GmbH, Alulux, Niederhofer, DiHa, Markilux, Somfy, Neher, Roto</p>
+          <h2 className="text-2xl">Website</h2>
+          <p>Stefan Brandhuber, www.flowstateai.de</p>
+          <h2 className="text-2xl">Haftungsausschlußerklärung</h2>
+          <p>Für Inhalte externer Webseiten, die mit Links von dieser Site erreichbar sind, übernehmen wir keine Haftung.</p>
         </div>
       </section>
     </SiteLayout>

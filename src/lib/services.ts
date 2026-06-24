@@ -64,25 +64,25 @@ export const services: Service[] = [
   {
     slug: "fenster",
     title: "Fenster & Türen",
-    teaser: "Als offizieller Internorm [1st] window partner – Fenster auf Premium-Niveau.",
+    teaser: "Als Gaulhofer Fachpartner – Fenster und Haustüren auf Premium-Niveau aus Österreich.",
     intro:
-      "Als [1st] window partner der Firma Internorm bieten wir Ihnen ein breites Spektrum hochwertiger Kunststoff- und Holz-Alu-Fenster. In unserer Ausstellung können Sie sich einen ersten Eindruck verschaffen und sich ausführlich beraten lassen. Wir übernehmen Lieferung und Montage im Austausch der alten Fenster – inklusive Innen- und Außenfensterbänke, Rollladenarbeiten sowie Beiputzarbeiten, Dämmen und Isolieren.",
+      "Als Gaulhofer Fachpartner bieten wir Ihnen ein breites Spektrum hochwertiger Kunststoff- und Holz-Alu-Fenster. In unserer Ausstellung können Sie sich einen ersten Eindruck verschaffen und sich ausführlich beraten lassen. Wir übernehmen Lieferung und Montage im Austausch der alten Fenster – inklusive Innen- und Außenfensterbänke, Rollladenarbeiten sowie Dämmen und Isolieren.",
     highlights: [
-      "Offizieller Internorm [1st] window partner",
+      "Offizieller Gaulhofer Fachpartner",
       "Kunststoff- und Holz-Alu-Fenster in Premium-Qualität",
-      "Komplettmontage inkl. Beiputz-, Dämm- und Isolierarbeiten",
+      "Komplettmontage inkl. Dämm- und Isolierarbeiten",
       "Persönliche Beratung in unserer Ausstellung in Dorfen",
     ],
     image: "/services/fenster.jpg",
     related: ["haustueren", "kastenisolierung", "dachfenster"],
     detail: {
       heroImage: "/leistungen/fenster-hero-v2.jpg",
-      leadTitle: "Fenster auf Premium-Niveau – als Internorm [1st] window partner",
-      lead: "Moderne Fenster entscheiden über Energieeffizienz, Sicherheit und Wohnkomfort. Als ausgezeichneter Internorm [1st] window partner führen wir das komplette Programm hochwertiger Kunststoff- und Holz-Alu-Fenster – maßgefertigt, fachgerecht montiert und persönlich beraten.",
+      leadTitle: "Fenster auf Premium-Niveau – als Gaulhofer Fachpartner",
+      lead: "Moderne Fenster entscheiden über Energieeffizienz, Sicherheit und Wohnkomfort. Als Gaulhofer Fachpartner führen wir hochwertige Kunststoff- und Holz-Alu-Fenster – maßgefertigt, fachgerecht montiert und persönlich beraten.",
       sections: [
         {
-          heading: "Internorm – Premium-Fenster aus Österreich",
-          body: "Internorm ist eine der führenden Fenstermarken Europas – ein österreichisches Familienunternehmen, das seit Jahrzehnten für kompromisslose Qualität steht. Ob Kunststoff- oder Holz-Alu-Fenster: Spitzenwerte bei Wärmedämmung, Einbruch- und Schallschutz treffen auf klares, zeitloses Design. So sparen Sie Heizkosten und gewinnen spürbar an Wohnkomfort.",
+          heading: "Gaulhofer – Premium-Fenster aus Österreich",
+          body: "Gaulhofer ist ein österreichisches Traditionsunternehmen, das seit Jahrzehnten für hochwertige Fenster und Haustüren steht. Ob Kunststoff- oder Holz-Alu-Fenster: Spitzenwerte bei Wärmedämmung, Einbruch- und Schallschutz treffen auf klares, zeitloses Design. So sparen Sie Heizkosten und gewinnen spürbar an Wohnkomfort.",
           image: "/leistungen/fenster-1.jpg",
         },
         {
@@ -92,7 +92,7 @@ export const services: Service[] = [
         },
         {
           heading: "Komplettmontage aus einer Hand",
-          body: "Wir liefern und montieren Ihre neuen Fenster im Austausch gegen die alten – sauber und termintreu durch unser eigenes Team. Die Montage umfasst alle anfallenden Arbeiten: Innen- und Außenfensterbänke, Rollladenarbeiten sowie Beiputzen, Dämmen und Isolieren. Ohne Subunternehmer, ohne Schnittstellen.",
+          body: "Wir liefern und montieren Ihre neuen Fenster im Austausch gegen die alten – sauber und termintreu durch unser eigenes Team. Die Montage umfasst alle anfallenden Arbeiten: Innen- und Außenfensterbänke, Rollladenarbeiten sowie Dämmen und Isolieren. Ohne Subunternehmer, ohne Schnittstellen.",
           image: "/leistungen/fenster-2.jpg",
         },
         {
@@ -108,7 +108,7 @@ export const services: Service[] = [
     title: "Haustüren",
     teaser: "Der erste Eindruck Ihres Hauses – sicher, gedämmt, individuell.",
     intro:
-      "Haustüren namhafter Hersteller machen den Hauseingang zum Blickfang und bieten zugleich mehr Sicherheit und höhere Wärmedämmung. Unser Sortiment reicht von modern über klassisch bis rustikal – inklusive Sicherheitshaustüren. Modelle aus Kunststoff, Holz-Alu, Aluminium und Holz. Wir liefern und montieren im Neubau wie im Austausch, inklusive Beiputz-, Dämm- und Isolierarbeiten. Ergänzend führen wir ein großes Sortiment an Vordächern.",
+      "Haustüren namhafter Hersteller machen den Hauseingang zum Blickfang und bieten zugleich mehr Sicherheit und höhere Wärmedämmung. Unser Sortiment reicht von modern über klassisch bis rustikal – inklusive Sicherheitshaustüren. Modelle aus Kunststoff, Holz-Alu, Aluminium und Holz. Wir liefern und montieren im Neubau wie im Austausch, inklusive Dämm- und Isolierarbeiten. Ergänzend führen wir ein großes Sortiment an Vordächern.",
     highlights: [
       "Sortiment von modern über klassisch bis rustikal",
       "Sicherheitshaustüren mit zertifizierten Schließsystemen",
@@ -116,7 +116,7 @@ export const services: Service[] = [
       "Großes Sortiment an passenden Vordächern",
     ],
     image: "/services/haustueren.jpg",
-    related: ["fenster", "einbruchschutz", "smart-home"],
+    related: ["fenster", "zipscreen", "smart-home"],
     detail: {
       heroImage: "/leistungen/haustueren-hero.jpg",
       leadTitle: "Haustüren – der erste Eindruck Ihres Zuhauses",
@@ -139,7 +139,7 @@ export const services: Service[] = [
         },
         {
           heading: "Komplett montiert – inklusive Vordach",
-          body: "Wir liefern und montieren im Neubau wie im Austausch, inklusive aller Beiputz-, Dämm- und Isolierarbeiten. Ergänzend führen wir ein großes Sortiment an Vordächern, die Ihren Eingang schützen und veredeln.",
+          body: "Wir liefern und montieren im Neubau wie im Austausch, inklusive aller Dämm- und Isolierarbeiten. Ergänzend führen wir ein großes Sortiment an Vordächern, die Ihren Eingang schützen und veredeln.",
           image: "/leistungen/haustueren-4.jpg",
         },
       ],
@@ -218,7 +218,7 @@ export const services: Service[] = [
         },
         {
           heading: "Licht, Wärme & Komfort",
-          body: "Mit integrierter LED-Beleuchtung und Heizstrahler nutzen Sie Ihre Terrasse bis in den späten Abend und in die kühlere Jahreszeit. Komfort, der den Außenbereich spürbar aufwertet.",
+          body: "Mit integrierter LED-Beleuchtung und Heizstrahler nutzen Sie Ihre Terrasse bis in den späten Abend und in der kühleren Jahreszeit. Komfort, der den Außenbereich spürbar aufwertet.",
           image: "/leistungen/markisen-3.jpg",
         },
         {
@@ -242,7 +242,7 @@ export const services: Service[] = [
       "Gute Wärmedämmung und verschleißarmer Verlauf",
     ],
     image: "/services/rolltore.jpg",
-    related: ["automatisierung", "einbruchschutz", "smart-home"],
+    related: ["automatisierung", "zipscreen", "smart-home"],
     detail: {
       heroImage: "/leistungen/rolltore-hero.jpg",
       leadTitle: "Rolltore – leise, sicher, ideal zum Nachrüsten",
@@ -276,7 +276,7 @@ export const services: Service[] = [
     title: "Smart Home",
     teaser: "Ihr Zuhause im Griff – per Tablet, Smartphone oder PC.",
     intro:
-      "Smart Home macht Ihr Zuhause sicherer und komfortabler. Per Tablet, Smartphone oder PC bedienen Sie die komplette Haustechnik: Rollladen, Markisen, Heizung, Lüftung, Alarmanlage, Dachfenster, Tore, Haustüren und Beleuchtung. Mit TaHoma® setzen wir auf ein unkompliziertes, benutzerfreundliches System – Ihr Zuhause immer im Blick, egal wo und wann.",
+      "Smart Home macht Ihr Zuhause sicherer und komfortabler. Per Tablet, Smartphone oder PC bedienen Sie die komplette Haustechnik: Rollladen, Markisen, Heizung, Lüftung, Dachfenster, Tore, Haustüren und Beleuchtung. Mit TaHoma® setzen wir auf ein unkompliziertes, benutzerfreundliches System – Ihr Zuhause immer im Blick, egal wo und wann.",
     highlights: [
       "Zentrale Steuerung der gesamten Haustechnik",
       "TaHoma® als bewährtes, intuitives System",
@@ -284,7 +284,7 @@ export const services: Service[] = [
       "Zugriff von unterwegs per App",
     ],
     image: "/services/smart-home.jpg",
-    related: ["automatisierung", "einbruchschutz", "rollladen"],
+    related: ["automatisierung", "zipscreen", "rollladen"],
     detail: {
       heroImage: "/leistungen/smart-home-hero.jpg",
       leadTitle: "Smart Home – Ihr Zuhause im Griff, von überall",
@@ -292,7 +292,7 @@ export const services: Service[] = [
       sections: [
         {
           heading: "Die ganze Haustechnik in einer App",
-          body: "Rollladen, Markisen, Heizung, Lüftung, Alarmanlage, Dachfenster, Tore, Haustüren und Beleuchtung – alles zentral bedienbar. Ein Fingertipp genügt, und Ihr Zuhause stellt sich auf Sie ein.",
+          body: "Rollladen, Markisen, Heizung, Lüftung, Dachfenster, Tore, Haustüren und Beleuchtung – alles zentral bedienbar. Ein Fingertipp genügt, und Ihr Zuhause stellt sich auf Sie ein.",
           image: "/services/smart-home.jpg",
         },
         {
@@ -356,43 +356,43 @@ export const services: Service[] = [
     },
   },
   {
-    slug: "einbruchschutz",
-    title: "Sicherheit & Einbruchschutz",
-    teaser: "Individuelle Sicherheitslösungen – vom Panzerriegel bis zur Alarmzentrale.",
+    slug: "zipscreen",
+    title: "ZIP-Screens",
+    teaser: "Textiler Sonnenschutz mit seitlich geführtem Gewebe – windstabil und blendfrei.",
     intro:
-      "Alle zwei Minuten wird in Deutschland eingebrochen – Tendenz steigend. Alarmanlagen und Sicherheitsvorkehrungen sorgen für mehr Sicherheit. Wir bieten individuelle Lösungen: von der Fensterzusatzsicherung über Türspion und Panzerriegel bis zur per Smart Home gesteuerten Alarmzentrale. Beratung und alle Produkte aus einer Hand. Jetzt nachrüsten und staatliche Förderung sichern.",
+      "ZIP-Screens sind außenliegende Textilscreens, deren Gewebe seitlich in einer Zip-Führung läuft. So bleibt der Behang auch bei Wind straff und geschlossen – für wirksamen Sonnen- und Blendschutz, ein angenehmes Raumklima und freie Sicht nach draußen. Ideal für große Glasflächen, Wintergärten und moderne Fassaden.",
     highlights: [
-      "Fensterzusatzsicherung, Panzerriegel, Türspion",
-      "Alarmanlagen bis zur Smart-Home-Alarmzentrale",
-      "Beratung zu staatlichen Förderprogrammen",
-      "Fachgerechte Nachrüstung im Bestand",
+      "Seitlich geführtes Gewebe (ZIP) – windstabil bis in hohe Lagen",
+      "Wirksamer Sonnen-, Hitze- und Blendschutz",
+      "Durchsicht nach außen bei reduzierter Aufheizung",
+      "Elektrisch und smart steuerbar, in vielen Farben",
     ],
-    image: "/services/einbruchschutz.jpg",
-    related: ["haustueren", "smart-home", "rollladen"],
+    image: "/services/zipscreen.jpg",
+    related: ["raffstores", "markisen", "automatisierung"],
     detail: {
-      heroImage: "/leistungen/einbruchschutz-hero.jpg",
-      leadTitle: "Sicherheit & Einbruchschutz – ruhig schlafen, gut geschützt",
-      lead: "Alle zwei Minuten wird in Deutschland eingebrochen – Tendenz steigend. Mit den richtigen Vorkehrungen schützen Sie Ihr Zuhause wirkungsvoll. Wir bieten individuelle Lösungen, Beratung und alle Produkte aus einer Hand.",
+      heroImage: "/leistungen/zipscreen-hero.jpg",
+      leadTitle: "ZIP-Screens – textiler Sonnenschutz, der dem Wind standhält",
+      lead: "ZIP-Screens vereinen wirksamen Sonnen- und Blendschutz mit klarer Optik. Das Gewebe läuft seitlich in einer Zip-Führung und bleibt so auch bei Wind straff gespannt – ohne Klappern, ohne Lücken. Ideal für große Fenster, Wintergärten und moderne Fassaden.",
       sections: [
         {
-          heading: "Wo Einbrecher ansetzen",
-          body: "Die meisten Einbrüche erfolgen über Fenster und Terrassentüren. Genau hier setzen wir an: mit stabilen Beschlägen, Pilzkopfverriegelungen und geprüften Sicherungen, die dem Aufhebeln standhalten.",
-          image: "/services/einbruchschutz.jpg",
+          heading: "Seitlich geführt, windstabil",
+          body: "Das Gewebe ist über einen Reißverschluss (ZIP) seitlich in den Führungsschienen verankert. Dadurch bleibt der Behang auch bei Wind faltenfrei gespannt und schließt seitlich dicht ab – für zuverlässigen Schutz selbst an exponierten Fassaden und in oberen Stockwerken.",
+          image: "/leistungen/zipscreen-2.jpg",
         },
         {
-          heading: "Vom Panzerriegel bis zur Alarmzentrale",
-          body: "Fensterzusatzsicherung, Türspion, Panzerriegel oder eine über Smart Home gesteuerte Alarmzentrale – wir stellen Ihre Sicherheitslösung individuell zusammen. Mechanisch, elektronisch oder kombiniert.",
-          image: "/leistungen/einbruchschutz-2.jpg",
+          heading: "Hitzeschutz mit freier Sicht",
+          body: "Das transparente Screen-Gewebe hält Sonne und Hitze draußen, ohne den Raum abzudunkeln. Sie behalten den Blick nach außen, reduzieren die Aufheizung spürbar und senken den Bedarf an Klimatechnik – blendfreies Arbeiten und Wohnen inklusive.",
+          image: "/leistungen/zipscreen-3.jpg",
         },
         {
-          heading: "Rollladen & Beschattung als Schutz",
-          body: "Hochschiebesichere Rollläden und stabile Beschattung sind ein wirksamer Grundschutz: Sie erschweren das Eindringen und schrecken ab – oft die einfachste Nachrüstung mit großer Wirkung.",
-          image: "/leistungen/einbruchschutz-3.jpg",
+          heading: "Maßgefertigt für große Flächen",
+          body: "Ob bodentiefe Fenster, Schiebetüren oder Wintergarten: ZIP-Screens werden passgenau gefertigt und eignen sich besonders für große Glasflächen. Eine breite Auswahl an Gewebe- und Rahmenfarben fügt sich dezent in jede Fassade ein.",
+          image: "/leistungen/zipscreen-4.jpg",
         },
         {
-          heading: "Beratung & staatliche Förderung",
-          body: "Wir beraten Sie zu sinnvollen Maßnahmen für Ihr Objekt – und zu staatlichen Förderprogrammen (z. B. der KfW), mit denen Sie einen Teil der Kosten zurückbekommen. Jetzt nachrüsten lohnt sich doppelt.",
-          image: "/leistungen/einbruchschutz-4.jpg",
+          heading: "Elektrisch & smart steuerbar",
+          body: "Per Funk, Schalter oder App bedienbar – auf Wunsch mit Sonnen- und Windautomatik, die den Screen bei Bedarf von selbst fährt. So sind Hitzeschutz und Komfort jederzeit gesichert, ganz ohne Handgriff.",
+          image: "/leistungen/zipscreen-hero.jpg",
         },
       ],
     },
