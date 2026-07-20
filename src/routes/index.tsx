@@ -6,10 +6,24 @@ import { services } from "@/lib/services";
 import { ArrowRight, MapPin, Award, Wrench, Users } from "lucide-react";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion";
 
-const heroSlides = [
+type HeroSlide = {
+  slug: string;
+  image: string;
+  eyebrow: string;
+  title: string;
+  cta: string;
+  /** Optionaler object-position-Override, z.B. um mobil einen anderen Bildausschnitt zu zeigen. */
+  imageClass?: string;
+};
+
+const heroSlides: HeroSlide[] = [
   {
     slug: "rollladen",
     image: "/hero/rollladen.jpg",
+    // Auf schmalen Viewports schneidet object-cover mittig zu und zeigt den
+    // Eingang statt der Rollladen. Deshalb mobil nach rechts auf die Fenster
+    // verschoben; ab md wieder zentriert wie bei den anderen Slides.
+    imageClass: "object-[74%_center] md:object-center",
     eyebrow: "Schutz rund ums Jahr",
     title: "Rollladen",
     cta: "Mehr zu Rollladen",
@@ -66,7 +80,11 @@ function HeroSlider() {
           aria-hidden={i !== active}
           className={`absolute inset-0 transition-opacity duration-[1200ms] ease-in-out ${i === active ? "opacity-100" : "opacity-0"}`}
         >
-          <img src={s.image} alt={s.title} className="absolute inset-0 h-full w-full object-cover" />
+          <img
+            src={s.image}
+            alt={s.title}
+            className={`absolute inset-0 h-full w-full object-cover ${s.imageClass ?? "object-center"}`}
+          />
         </div>
       ))}
       <div className="absolute inset-0 bg-gradient-to-b from-charcoal/45 via-charcoal/20 to-charcoal/80" />
