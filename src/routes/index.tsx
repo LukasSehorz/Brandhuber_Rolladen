@@ -15,7 +15,7 @@ const heroSlides = [
     cta: "Mehr zu Rollladen",
   },
   {
-    slug: "raffstores",
+    slug: "markisen",
     image: "/hero/sonnenschutz.jpg",
     eyebrow: "Tageslicht lenken",
     title: "Sonnenschutz",
@@ -24,10 +24,28 @@ const heroSlides = [
   {
     slug: "fenster",
     image: "/hero/fenster.jpg",
-    eyebrow: "Gaulhofer Fachpartner",
+    eyebrow: "Energie sparen, Komfort gewinnen",
     title: "Fenster & Türen",
     cta: "Mehr zu Fenster & Türen",
   },
+];
+
+// Lieferanten für die Partner-Section. url: null => wird bewusst nicht verlinkt,
+// solange die offizielle Website nicht zweifelsfrei bestätigt ist.
+const partners: { name: string; url: string | null }[] = [
+  { name: "ROMA", url: "https://www.roma.de/" },
+  { name: "markilux", url: "https://www.markilux.com/de-de/" },
+  { name: "Lewens", url: "https://www.lewens.de/" },
+  { name: "Heydebreck", url: "https://heydebreck.com/" },
+  { name: "MHZ", url: "https://www.mhz.de/" },
+  { name: "Somfy", url: "https://www.somfy.de/" },
+  { name: "Gaulhofer", url: "https://www.gaulhofer.com/" },
+  { name: "Niederhofer", url: "https://www.niederhofer-fenster.de/" },
+  { name: "EGE", url: null },
+  { name: "MAY", url: "https://www.may-online.com/de/" },
+  { name: "Roto", url: "https://www.roto-dachfenster.de/" },
+  { name: "VELUX", url: "https://www.velux.de/" },
+  { name: "WIPRO", url: "https://wipro-system.com/" },
 ];
 
 function HeroSlider() {
@@ -96,7 +114,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Brandhuber GmbH – Rollladen, Sonnenschutz, Fenster | Dorfen" },
-      { name: "description", content: "Traditionsreicher Fachbetrieb für Rollladen, Sonnenschutz, Fenster, Türen und Smart Home. Gaulhofer Fachpartner in Dorfen, Bayern." },
+      { name: "description", content: "Traditionsreicher Fachbetrieb für Rollladen, Sonnenschutz, Fenster, Türen und Smart Home. ROMA Fachpartner in Dorfen, Bayern." },
       { property: "og:title", content: "Brandhuber GmbH – Fachbetrieb in Dorfen" },
       { property: "og:description", content: "Schatten. Sicherheit. Stil. Seit Jahrzehnten Ihr Fachbetrieb für Rollladen, Sonnenschutz und Fenster im Landkreis Erding." },
       { property: "og:url", content: "/" },
@@ -112,36 +130,36 @@ function Index() {
       {/* HERO */}
       <HeroSlider />
 
-      {/* INTERNORM */}
+      {/* ROMA */}
       <section className="py-24 md:py-32">
         <div className="container-prose grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
           {/* Text */}
           <Stagger stagger={0.1}>
             <StaggerItem>
-              <SectionEyebrow>Gaulhofer · Fachpartner</SectionEyebrow>
+              <SectionEyebrow>ROMA · Fachpartner</SectionEyebrow>
             </StaggerItem>
             <StaggerItem>
               <h2 className="mt-6 max-w-xl text-4xl md:text-5xl text-charcoal">
-                Gaulhofer – Premium-Fenster und Haustüren aus Österreich
+                ROMA – Rollladen und Sonnenschutz, made in Germany
               </h2>
             </StaggerItem>
 
             <StaggerItem className="mt-10 space-y-6 text-base md:text-lg leading-relaxed text-muted-foreground">
               <p>
-                <strong className="font-medium text-charcoal">Gaulhofer</strong> ist ein österreichisches Traditionsunternehmen, das seit Jahrzehnten für hochwertige Fenster und Haustüren steht. Ob <strong className="font-medium text-charcoal">Kunststoff- oder Holz-Alu-Fenster</strong>: Spitzenwerte bei <strong className="font-medium text-charcoal">Wärmedämmung, Sicherheit und Schallschutz</strong> treffen auf klares, zeitloses Design.
+                <strong className="font-medium text-charcoal">ROMA</strong> ist unser Hauptlieferant und die führende Marke für hochwertigen Sicht- und Sonnenschutz. Das Familienunternehmen aus <strong className="font-medium text-charcoal">Burgau in Bayerisch-Schwaben</strong> fertigt seit 1978 <strong className="font-medium text-charcoal">Rollladen, Raffstoren, Textilscreens und Garagentore</strong> – entwickelt und produziert in Deutschland.
               </p>
               <p>
-                Als <strong className="font-medium text-charcoal">Gaulhofer Fachpartner</strong> führen wir das <strong className="font-medium text-charcoal">komplette Gaulhofer-Programm</strong>. In unserer Ausstellung in Dorfen beraten wir Sie persönlich und ausführlich. Lieferung und Montage kommen aus einer Hand – inklusive <strong className="font-medium text-charcoal">Dämmung, Einstellung und Einweisung</strong>.
+                Als <strong className="font-medium text-charcoal">ROMA Fachpartner</strong> führen wir das komplette Programm und fertigen jede Anlage nach Maß. In unserer Ausstellung in Dorfen beraten wir Sie persönlich und ausführlich. Lieferung, Montage und <strong className="font-medium text-charcoal">Motorisierung samt Smart-Home-Anbindung</strong> kommen aus einer Hand.
               </p>
             </StaggerItem>
 
             <StaggerItem>
               <Link
                 to="/leistungen/$slug"
-                params={{ slug: "fenster" }}
+                params={{ slug: "rollladen" }}
                 className="link-underline mt-10 inline-flex items-center text-charcoal text-sm uppercase tracking-[0.2em]"
               >
-                Mehr zu Fenster &amp; Türen <ArrowRight className="ml-2 h-4 w-4" />
+                Mehr zu Rollladen <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </StaggerItem>
           </Stagger>
@@ -157,8 +175,8 @@ function Index() {
             {/* photo */}
             <div className="relative aspect-[4/5] overflow-hidden bg-greige">
               <img
-                src="/internorm/internorm-fenster.jpg"
-                alt="Gaulhofer Fenster mit schmalen Rahmen in einem hellen, modernen Wohnraum mit Blick in den Garten"
+                src="/services/rollladen.jpg"
+                alt="Anthrazitfarbene Rollladen an den Fenstern eines modernen Wohnhauses, teilweise heruntergelassen"
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
               />
@@ -166,7 +184,7 @@ function Index() {
 
             {/* partner seal */}
             <div className="absolute -left-4 bottom-10 bg-charcoal px-6 py-5 sm:-left-6 section-dark">
-              <div className="font-serif text-lg leading-none text-background">Gaulhofer</div>
+              <div className="font-serif text-lg leading-none text-background">ROMA</div>
               <div className="mt-2.5 flex items-center gap-2">
                 <span className="h-px w-5 bg-copper" />
                 <span className="text-[0.6rem] uppercase tracking-[0.28em] text-copper">Fachpartner</span>
@@ -281,10 +299,22 @@ function Index() {
           <Reveal className="text-center text-xs uppercase tracking-[0.3em] text-background/50 mb-10">
             Wir arbeiten mit den führenden Herstellern
           </Reveal>
-          <Stagger className="flex flex-wrap items-center justify-center gap-x-16 gap-y-6" stagger={0.07}>
-            {["Gaulhofer", "Somfy", "Alulux", "Warema", "TaHoma", "VELUX"].map((p) => (
-              <StaggerItem key={p} className="font-serif text-2xl text-background/75 hover:text-copper transition-colors duration-300" y={16}>
-                {p}
+          <Stagger className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 md:gap-x-14" stagger={0.05}>
+            {partners.map((p) => (
+              <StaggerItem key={p.name} y={16}>
+                {p.url ? (
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`${p.name} – Website öffnen (neues Fenster)`}
+                    className="font-serif text-xl md:text-2xl text-background/75 hover:text-copper transition-colors duration-300"
+                  >
+                    {p.name}
+                  </a>
+                ) : (
+                  <span className="font-serif text-xl md:text-2xl text-background/75">{p.name}</span>
+                )}
               </StaggerItem>
             ))}
           </Stagger>

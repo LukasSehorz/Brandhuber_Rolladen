@@ -32,7 +32,7 @@ export const services: Service[] = [
       "Maßgefertigt für jede Fenstergeometrie",
     ],
     image: "/services/rollladen.jpg",
-    related: ["automatisierung", "smart-home", "kastenisolierung"],
+    related: ["automatisierung", "insektenschutz", "kastenisolierung"],
     detail: {
       heroImage: "/leistungen/rollladen-hero.jpg",
       leadTitle: "Rollladen – Schutz, der sich jeden Tag bezahlt macht",
@@ -64,11 +64,11 @@ export const services: Service[] = [
   {
     slug: "fenster",
     title: "Fenster & Türen",
-    teaser: "Als Gaulhofer Fachpartner – Fenster und Haustüren auf Premium-Niveau aus Österreich.",
+    teaser: "Fenster und Haustüren auf Premium-Niveau – maßgefertigt und fachgerecht montiert.",
     intro:
-      "Als Gaulhofer Fachpartner bieten wir Ihnen ein breites Spektrum hochwertiger Kunststoff- und Holz-Alu-Fenster. In unserer Ausstellung können Sie sich einen ersten Eindruck verschaffen und sich ausführlich beraten lassen. Wir übernehmen Lieferung und Montage im Austausch der alten Fenster – inklusive Innen- und Außenfensterbänke, Rollladenarbeiten sowie Dämmen und Isolieren.",
+      "Wir bieten Ihnen ein breites Spektrum hochwertiger Kunststoff- und Holz-Alu-Fenster. In unserer Ausstellung können Sie sich einen ersten Eindruck verschaffen und sich ausführlich beraten lassen. Wir übernehmen Lieferung und Montage im Austausch der alten Fenster – inklusive Innen- und Außenfensterbänke, Rollladenarbeiten sowie Dämmen und Isolieren.",
     highlights: [
-      "Offizieller Gaulhofer Fachpartner",
+      "Markenfenster in Premium-Qualität",
       "Kunststoff- und Holz-Alu-Fenster in Premium-Qualität",
       "Komplettmontage inkl. Dämm- und Isolierarbeiten",
       "Persönliche Beratung in unserer Ausstellung in Dorfen",
@@ -77,12 +77,12 @@ export const services: Service[] = [
     related: ["haustueren", "kastenisolierung", "dachfenster"],
     detail: {
       heroImage: "/leistungen/fenster-hero-v2.jpg",
-      leadTitle: "Fenster auf Premium-Niveau – als Gaulhofer Fachpartner",
-      lead: "Moderne Fenster entscheiden über Energieeffizienz, Sicherheit und Wohnkomfort. Als Gaulhofer Fachpartner führen wir hochwertige Kunststoff- und Holz-Alu-Fenster – maßgefertigt, fachgerecht montiert und persönlich beraten.",
+      leadTitle: "Fenster auf Premium-Niveau – maßgefertigt aus einer Hand",
+      lead: "Moderne Fenster entscheiden über Energieeffizienz, Sicherheit und Wohnkomfort. Wir führen hochwertige Kunststoff- und Holz-Alu-Fenster – maßgefertigt, fachgerecht montiert und persönlich beraten.",
       sections: [
         {
-          heading: "Gaulhofer – Premium-Fenster aus Österreich",
-          body: "Gaulhofer ist ein österreichisches Traditionsunternehmen, das seit Jahrzehnten für hochwertige Fenster und Haustüren steht. Ob Kunststoff- oder Holz-Alu-Fenster: Spitzenwerte bei Wärmedämmung, Einbruch- und Schallschutz treffen auf klares, zeitloses Design. So sparen Sie Heizkosten und gewinnen spürbar an Wohnkomfort.",
+          heading: "Premium-Fenster namhafter Hersteller",
+          body: "Wir setzen auf Markenfenster, die seit Jahrzehnten für Qualität stehen. Ob Kunststoff- oder Holz-Alu-Fenster: Spitzenwerte bei Wärmedämmung, Einbruch- und Schallschutz treffen auf klares, zeitloses Design. So sparen Sie Heizkosten und gewinnen spürbar an Wohnkomfort.",
           image: "/leistungen/fenster-1.jpg",
         },
         {
@@ -116,7 +116,7 @@ export const services: Service[] = [
       "Großes Sortiment an passenden Vordächern",
     ],
     image: "/services/haustueren.jpg",
-    related: ["fenster", "zipscreen", "smart-home"],
+    related: ["fenster", "zipscreen", "rolltore"],
     detail: {
       heroImage: "/leistungen/haustueren-hero.jpg",
       leadTitle: "Haustüren – der erste Eindruck Ihres Zuhauses",
@@ -230,6 +230,48 @@ export const services: Service[] = [
     },
   },
   {
+    slug: "sonnenschirme",
+    title: "Sonnenschirme",
+    teaser: "Großschirme und Ampelschirme von MAY – Made in Germany.",
+    intro:
+      "Sonnenschirme schaffen Schatten dort, wo eine feste Konstruktion nicht passt – flexibel, elegant und schnell aufgestellt. Wir arbeiten mit MAY, einem deutschen Hersteller, der seit 1983 im oberschwäbischen Betzenweiler Sonnenschirme fertigt. Vom Ampelschirm für die private Terrasse bis zum Großschirm für Gastronomie und Hotellerie – in vielen Formen, Größen und Stofffarben.",
+    highlights: [
+      "Ampel- und Mittelmastschirme von MAY, Made in Germany",
+      "Modelle für private Terrassen wie für Gastronomie",
+      "Große Auswahl an Stoffqualitäten und Farben",
+      "Zusatzausstattung wie LED-Licht und Heizstrahler",
+    ],
+    image: "/services/sonnenschirme.jpg",
+    related: ["markisen", "terrassendaecher", "raffstores"],
+    detail: {
+      heroImage: "/leistungen/sonnenschirme-hero.jpg",
+      leadTitle: "Sonnenschirme – Schatten, wo Sie ihn brauchen",
+      lead: "Ein hochwertiger Sonnenschirm schafft Schatten genau dort, wo eine feste Überdachung nicht passt. Wir liefern Schirme von MAY, einem deutschen Hersteller, der seit 1983 in Oberschwaben produziert – vom Ampelschirm für die Terrasse bis zum Großschirm für die Gastronomie.",
+      sections: [
+        {
+          heading: "Ampelschirm oder Mittelmastschirm",
+          body: "Beim Ampelschirm hängt das Dach an einem seitlichen Ausleger – die Fläche darunter bleibt frei, der Schirm lässt sich über Tisch und Sitzgruppe schwenken. Der Mittelmastschirm steht klassisch mittig und erreicht deutlich größere Flächen. Wir klären mit Ihnen vor Ort, welche Bauform zu Ihrer Terrasse passt.",
+          image: "/services/sonnenschirme.jpg",
+        },
+        {
+          heading: "Für Privatterrasse und Gastronomie",
+          body: "MAY unterscheidet klar zwischen privaten und gewerblichen Modellen: Die Ampelschirme MEZZO und DACAPO sind für die private Terrasse entwickelt, RIALTO, FILIUS, SCHATTELLO und ALBATROS sind Gewerbeschirme für Gastronomie und Hotellerie. Der ALBATROS überdacht in der größten Ausführung bis zu 75 m² – genug für ganze Außenbereiche.",
+          image: "/leistungen/sonnenschirme-2.jpg",
+        },
+        {
+          heading: "Stoffe, Farben & Sonderanfertigung",
+          body: "Zur Wahl stehen die Schirmstoffe MayTex-Poly, MayTex-Acryl und MayTex-PVC in einer großen Farbpalette, mit oder ohne Volant. Das Gestell besteht aus stranggepressten Aluminiumprofilen und ist in verschiedenen Farben erhältlich, Sonderfarben auf Wunsch. Auch abweichende Größen und Formen sowie eine Bedruckung der Gewerbeschirme mit Ihrem Logo sind möglich.",
+          image: "/leistungen/sonnenschirme-3.jpg",
+        },
+        {
+          heading: "Ständer, Ausstattung & Service",
+          body: "Ob mobiler Ständer, Bodenhülse, Fundament oder Flachdachbefestigung – die Befestigung planen wir passend zu Ihrem Untergrund. Auf Wunsch kommen LED-Beleuchtung, Infrarotheizstrahler, Seitenbehänge oder Regenrinnen dazu, größere Modelle auch mit Rohrmotor und Windsensor. Wir montieren fachgerecht und stehen Ihnen später für Wartung und Reparatur zur Verfügung.",
+          image: "/leistungen/sonnenschirme-4.jpg",
+        },
+      ],
+    },
+  },
+  {
     slug: "rolltore",
     title: "Rolltore",
     teaser: "Aluminium-Rolltore für Privat und Gewerbe – leise, sicher, langlebig.",
@@ -242,7 +284,7 @@ export const services: Service[] = [
       "Gute Wärmedämmung und verschleißarmer Verlauf",
     ],
     image: "/services/rolltore.jpg",
-    related: ["automatisierung", "zipscreen", "smart-home"],
+    related: ["automatisierung", "zipscreen", "reparaturservice"],
     detail: {
       heroImage: "/leistungen/rolltore-hero.jpg",
       leadTitle: "Rolltore – leise, sicher, ideal zum Nachrüsten",
@@ -267,48 +309,6 @@ export const services: Service[] = [
           heading: "Platzsparend & ideal zum Nachrüsten",
           body: "Das Rolltor wickelt sich nach oben auf – kein Deckenplatz, keine ausschwenkenden Flügel. Der montagefreundliche Einbau macht es zur idealen Lösung auch im Bestand, bei nahezu jeder Garagengröße.",
           image: "/leistungen/rolltore-4.jpg",
-        },
-      ],
-    },
-  },
-  {
-    slug: "smart-home",
-    title: "Smart Home",
-    teaser: "Ihr Zuhause im Griff – per Tablet, Smartphone oder PC.",
-    intro:
-      "Smart Home macht Ihr Zuhause sicherer und komfortabler. Per Tablet, Smartphone oder PC bedienen Sie die komplette Haustechnik: Rollladen, Markisen, Heizung, Lüftung, Dachfenster, Tore, Haustüren und Beleuchtung. Mit TaHoma® setzen wir auf ein unkompliziertes, benutzerfreundliches System – Ihr Zuhause immer im Blick, egal wo und wann.",
-    highlights: [
-      "Zentrale Steuerung der gesamten Haustechnik",
-      "TaHoma® als bewährtes, intuitives System",
-      "Szenen, Zeitsteuerung und Sonnenautomatik",
-      "Zugriff von unterwegs per App",
-    ],
-    image: "/services/smart-home.jpg",
-    related: ["automatisierung", "zipscreen", "rollladen"],
-    detail: {
-      heroImage: "/leistungen/smart-home-hero.jpg",
-      leadTitle: "Smart Home – Ihr Zuhause im Griff, von überall",
-      lead: "Smart Home macht Ihr Zuhause sicherer und komfortabler. Per Tablet, Smartphone oder PC steuern Sie die komplette Haustechnik – mit TaHoma® setzen wir auf ein bewährtes, intuitives System.",
-      sections: [
-        {
-          heading: "Die ganze Haustechnik in einer App",
-          body: "Rollladen, Markisen, Heizung, Lüftung, Dachfenster, Tore, Haustüren und Beleuchtung – alles zentral bedienbar. Ein Fingertipp genügt, und Ihr Zuhause stellt sich auf Sie ein.",
-          image: "/services/smart-home.jpg",
-        },
-        {
-          heading: "TaHoma® – einfach und bewährt",
-          body: "Mit TaHoma® von Somfy steuern Sie alles über eine übersichtliche, benutzerfreundliche Oberfläche. Bewährte Technik, regelmäßige Updates und ein großes Ökosystem kompatibler Geräte.",
-          image: "/leistungen/smart-home-2.jpg",
-        },
-        {
-          heading: "Szenen & Automatik",
-          body: "Sonnenautomatik, Zeitpläne und individuelle Szenen nehmen Ihnen die Routine ab: Morgens fahren die Rollläden hoch, mittags schützt die Beschattung vor Hitze, abends senkt sich alles automatisch.",
-          image: "/leistungen/smart-home-3.jpg",
-        },
-        {
-          heading: "Sicher, auch von unterwegs",
-          body: "Ob im Büro oder im Urlaub – per App haben Sie Ihr Zuhause immer im Blick. Anwesenheit simulieren, Meldungen empfangen, im Ernstfall reagieren. Komfort und Sicherheit, jederzeit erreichbar.",
-          image: "/leistungen/smart-home-4.jpg",
         },
       ],
     },
@@ -494,7 +494,7 @@ export const services: Service[] = [
       "Smart-Home-Integration mit TaHoma®",
     ],
     image: "/services/automatisierung.jpg",
-    related: ["smart-home", "rollladen", "raffstores"],
+    related: ["rollladen", "raffstores", "markisen"],
     detail: {
       heroImage: "/leistungen/automatisierung-hero.jpg",
       leadTitle: "Motorantrieb & Automatisierung – Komfort per Knopfdruck",
@@ -617,7 +617,7 @@ export const services: Service[] = [
       "Schnelle Terminvereinbarung",
       "Reparatur aller gängigen Fabrikate",
       "Wartung und Nachrüstung aus einer Hand",
-      "Eigenes Servicefahrzeug in der Region unterwegs",
+      "Eigene Servicefahrzeuge in der Region unterwegs",
     ],
     image: "/services/reparaturservice.jpg",
     related: ["rollladen", "markisen", "fenster"],
@@ -642,8 +642,8 @@ export const services: Service[] = [
           image: "/leistungen/reparaturservice-3.jpg",
         },
         {
-          heading: "Eigenes Servicefahrzeug in der Region",
-          body: "Mit eigenem Servicefahrzeug sind wir in den Landkreisen Erding, Mühldorf, Ebersberg und München unterwegs – kurze Wege, schnelle Hilfe, persönlicher Ansprechpartner.",
+          heading: "Eigene Servicefahrzeuge in der Region",
+          body: "Mit eigenen Servicefahrzeugen sind wir in den Landkreisen Erding, Mühldorf, Ebersberg und München unterwegs – kurze Wege, schnelle Hilfe, persönlicher Ansprechpartner.",
           image: "/leistungen/reparaturservice-4.jpg",
         },
       ],

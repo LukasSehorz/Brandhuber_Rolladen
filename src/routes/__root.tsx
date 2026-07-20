@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Brandhuber GmbH – Rollladen, Sonnenschutz & Fenster in Dorfen" },
-      { name: "description", content: "Ihr Fachbetrieb für Rollladen, Sonnenschutz und Fenster. Gaulhofer Fachpartner in Dorfen für Erding, Mühldorf, Ebersberg und München." },
+      { name: "description", content: "Ihr Fachbetrieb für Rollladen, Sonnenschutz und Fenster. ROMA Fachpartner in Dorfen für Erding, Mühldorf, Ebersberg und München." },
       { name: "author", content: "Brandhuber GmbH" },
       { property: "og:site_name", content: "Brandhuber GmbH" },
       { property: "og:type", content: "website" },

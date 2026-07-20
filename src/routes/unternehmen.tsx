@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero, CTASection, SectionEyebrow } from "@/components/site-layout";
-import { MapPin, Phone, Map } from "lucide-react";
+import { MapPin, Phone, Map as MapIcon } from "lucide-react";
 import { Reveal, Stagger, StaggerItem, CountUp, motion } from "@/components/motion";
 
 export const Route = createFileRoute("/unternehmen")({
@@ -204,7 +204,7 @@ function Page() {
             </div>
           </StaggerItem>
           <StaggerItem className="flex gap-4">
-            <Map className="h-6 w-6 text-copper shrink-0" strokeWidth={1.25} />
+            <MapIcon className="h-6 w-6 text-copper shrink-0" strokeWidth={1.25} />
             <div>
               <div className="text-xs uppercase tracking-[0.2em] text-charcoal/60">Einsatzgebiet</div>
               <div className="mt-2 text-charcoal leading-relaxed">Erding · Mühldorf · Ebersberg · München</div>
