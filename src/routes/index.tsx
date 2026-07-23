@@ -55,7 +55,7 @@ const partners: { name: string; url: string | null }[] = [
   { name: "Somfy", url: "https://www.somfy.de/" },
   { name: "Gaulhofer", url: "https://www.gaulhofer.com/" },
   { name: "Niederhofer", url: "https://www.niederhofer-fenster.de/" },
-  { name: "EGE", url: null },
+  { name: "EGE", url: "https://www.ege.de/" },
   { name: "MAY", url: "https://www.may-online.com/de/" },
   { name: "Roto", url: "https://www.roto-dachfenster.de/" },
   { name: "VELUX", url: "https://www.velux.de/" },
