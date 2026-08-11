@@ -29,6 +29,8 @@ function Page() {
           <p>Stefan Brandhuber, www.flowstateai.de</p>
           <h2 className="text-2xl">Haftungsausschlußerklärung</h2>
           <p>Für Inhalte externer Webseiten, die mit Links von dieser Site erreichbar sind, übernehmen wir keine Haftung.</p>
+          <h2 className="text-2xl">Hinweis zu KI-generierten Inhalten</h2>
+          <p>Teile der Inhalte dieser Website (Texte und Bilder) wurden mit Unterstützung von künstlicher Intelligenz erstellt und redaktionell geprüft.</p>
         </div>
       </section>
     </SiteLayout>

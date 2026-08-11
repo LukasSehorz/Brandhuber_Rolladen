@@ -68,6 +68,9 @@ export function SiteFooter() {
             <Link to="/glossar" className="hover:text-copper">Glossar</Link>
           </div>
         </div>
+        <div className="container-prose pb-6 text-xs text-background/50">
+          Teile der Inhalte dieser Website wurden mit Unterstützung von KI erstellt.
+        </div>
       </div>
     </footer>
   );
