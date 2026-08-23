@@ -66,6 +66,13 @@ export function SiteFooter() {
             <Link to="/impressum" className="hover:text-copper">Impressum</Link>
             <Link to="/datenschutz" className="hover:text-copper">Datenschutz</Link>
             <Link to="/glossar" className="hover:text-copper">Glossar</Link>
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))}
+              className="hover:text-copper"
+            >
+              Cookie-Einstellungen
+            </button>
           </div>
         </div>
         <div className="container-prose pb-6 text-xs text-background/50">
