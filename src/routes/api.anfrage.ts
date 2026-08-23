@@ -5,7 +5,7 @@ import type {} from "@tanstack/react-start";
 const json = (data: unknown, status = 200) =>
   new Response(JSON.stringify(data), {
     status,
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "X-Anfrage-Rev": "2" },
   });
 
 /** HTML-escapen für die E-Mail */
@@ -81,7 +81,7 @@ export const Route = createFileRoute("/api/anfrage")({
         ];
 
         const html = `<!doctype html>
-<html><body style="margin:0;background:#f4f1ec;padding:24px;font-family:Arial,Helvetica,sans-serif;color:#1c1c1a;">
+<html><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body style="margin:0;background:#f4f1ec;padding:24px;font-family:Arial,Helvetica,sans-serif;color:#1c1c1a;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:580px;margin:0 auto;background:#ffffff;border:1px solid #e5e1da;">
     <tr><td style="background:#1c1c1a;color:#ffffff;padding:22px 28px;font-size:12px;letter-spacing:2px;text-transform:uppercase;">
       Brandhuber GmbH &middot; Neue ${esc(label)} &uuml;ber die Website
