@@ -19,6 +19,7 @@ import { Route as GlossarRouteImport } from './routes/glossar'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LeistungenSlugRouteImport } from './routes/leistungen.$slug'
+import { Route as ApiAnfrageRouteImport } from './routes/api.anfrage'
 
 const UnternehmenRoute = UnternehmenRouteImport.update({
   id: '/unternehmen',
@@ -70,6 +71,11 @@ const LeistungenSlugRoute = LeistungenSlugRouteImport.update({
   path: '/leistungen/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAnfrageRoute = ApiAnfrageRouteImport.update({
+  id: '/api/anfrage',
+  path: '/api/anfrage',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/referenzen': typeof ReferenzenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/api/anfrage': typeof ApiAnfrageRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
 }
 export interface FileRoutesByTo {
@@ -93,6 +100,7 @@ export interface FileRoutesByTo {
   '/referenzen': typeof ReferenzenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/api/anfrage': typeof ApiAnfrageRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
 }
 export interface FileRoutesById {
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   '/referenzen': typeof ReferenzenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/api/anfrage': typeof ApiAnfrageRoute
   '/leistungen/$slug': typeof LeistungenSlugRoute
 }
 export interface FileRouteTypes {
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | '/referenzen'
     | '/sitemap.xml'
     | '/unternehmen'
+    | '/api/anfrage'
     | '/leistungen/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
     | '/referenzen'
     | '/sitemap.xml'
     | '/unternehmen'
+    | '/api/anfrage'
     | '/leistungen/$slug'
   id:
     | '__root__'
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/referenzen'
     | '/sitemap.xml'
     | '/unternehmen'
+    | '/api/anfrage'
     | '/leistungen/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -157,6 +169,7 @@ export interface RootRouteChildren {
   ReferenzenRoute: typeof ReferenzenRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UnternehmenRoute: typeof UnternehmenRoute
+  ApiAnfrageRoute: typeof ApiAnfrageRoute
   LeistungenSlugRoute: typeof LeistungenSlugRoute
 }
 
@@ -232,6 +245,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LeistungenSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/anfrage': {
+      id: '/api/anfrage'
+      path: '/api/anfrage'
+      fullPath: '/api/anfrage'
+      preLoaderRoute: typeof ApiAnfrageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -245,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReferenzenRoute: ReferenzenRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   UnternehmenRoute: UnternehmenRoute,
+  ApiAnfrageRoute: ApiAnfrageRoute,
   LeistungenSlugRoute: LeistungenSlugRoute,
 }
 export const routeTree = rootRouteImport

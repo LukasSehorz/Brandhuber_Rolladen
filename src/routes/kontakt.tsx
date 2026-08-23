@@ -4,7 +4,7 @@ import { SiteLayout, PageHero, SectionEyebrow } from "@/components/site-layout";
 import { services } from "@/lib/services";
 import { Phone, Printer, MapPin, Clock, ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { useState, type ReactNode, type FormEvent } from "react";
 import { Reveal } from "@/components/motion";
 
 const search = z.object({ leistung: z.string().optional() });
@@ -32,6 +32,44 @@ function Page() {
   const { leistung } = Route.useSearch();
   const [betreff, setBetreff] = useState(leistung ?? "");
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    const fd = new FormData(e.currentTarget);
+    const betreffLabel =
+      betreff === "allgemein"
+        ? "Allgemeine Anfrage"
+        : betreff
+          ? (services.find((s) => s.slug === betreff)?.title ?? betreff)
+          : "";
+    const payload = {
+      formType: "kontakt" as const,
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      phone: String(fd.get("phone") || ""),
+      betreff: betreffLabel,
+      message: String(fd.get("message") || ""),
+      company: String(fd.get("company") || ""),
+    };
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/anfrage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({ ok: false }));
+      if (res.ok && data.ok) setSent(true);
+      else setError(data.error || "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+    } catch {
+      setError("Verbindung fehlgeschlagen. Bitte später erneut versuchen oder rufen Sie uns an.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <SiteLayout>
@@ -75,7 +113,8 @@ function Page() {
                 <p className="mt-3 text-muted-foreground">Wir haben Ihre Anfrage erhalten und melden uns in Kürze persönlich bei Ihnen.</p>
               </div>
             ) : (
-              <form className="space-y-8" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+              <form className="space-y-8" onSubmit={handleSubmit}>
+                <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
                 <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
                   <Field label="Name" name="name" required />
                   <Field label="E-Mail" name="email" type="email" required />
@@ -114,11 +153,15 @@ function Page() {
                   <input type="checkbox" required className="mt-0.5 h-4 w-4 shrink-0 accent-copper" />
                   Ich habe die <a href="/datenschutz" className="text-charcoal underline decoration-copper/40 underline-offset-2 hover:decoration-copper">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.
                 </label>
+                {error && (
+                  <p className="text-sm text-destructive" role="alert">{error}</p>
+                )}
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-3 bg-charcoal px-9 py-4 text-sm font-medium tracking-wide text-background transition-colors duration-500 hover:bg-copper"
+                  disabled={submitting}
+                  className="group inline-flex items-center gap-3 bg-charcoal px-9 py-4 text-sm font-medium tracking-wide text-background transition-colors duration-500 hover:bg-copper disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Anfrage senden
+                  {submitting ? "Wird gesendet …" : "Anfrage senden"}
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
               </form>

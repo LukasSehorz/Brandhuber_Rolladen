@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero, CTASection, SectionEyebrow } from "@/components/site-layout";
 import { Briefcase, Wrench, GraduationCap, Sparkles, ShieldCheck, Heart, Car, MapPin, ChevronDown, Check, ClipboardList, UserCheck, FileText } from "lucide-react";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion";
 
 export const Route = createFileRoute("/karriere")({
@@ -114,6 +114,56 @@ function Page() {
     document.getElementById("bewerbung")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    const fd = new FormData(e.currentTarget);
+    const file = fd.get("cv");
+    let attachment: { filename: string; content: string } | null = null;
+    if (file instanceof File && file.size > 0) {
+      if (file.size > 3_500_000) {
+        setError("Die PDF-Datei ist zu groß (max. 3,5 MB).");
+        return;
+      }
+      const content = await new Promise<string>((resolve, reject) => {
+        const r = new FileReader();
+        r.onload = () => resolve(String(r.result).split(",")[1] ?? "");
+        r.onerror = reject;
+        r.readAsDataURL(file);
+      });
+      attachment = { filename: file.name, content };
+    }
+    const payload = {
+      formType: "bewerbung" as const,
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      phone: String(fd.get("phone") || ""),
+      position: selected === "initiativ" ? "Initiativbewerbung" : selected,
+      message: String(fd.get("message") || ""),
+      company: String(fd.get("company") || ""),
+      attachment,
+    };
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/anfrage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({ ok: false }));
+      if (res.ok && data.ok) setSent(true);
+      else setError(data.error || "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+    } catch {
+      setError("Verbindung fehlgeschlagen. Bitte später erneut versuchen oder rufen Sie uns an.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <SiteLayout>
       <PageHero
@@ -223,7 +273,14 @@ function Page() {
             <a href="tel:080812142" className="mt-4 inline-block font-serif text-3xl text-copper">08081 2142</a>
           </Reveal>
           <Reveal className="md:col-span-7" delay={0.1}>
-            <form className="bg-card border border-border p-8 md:p-10 space-y-5" onSubmit={(e) => { e.preventDefault(); alert("Bewerbung gesendet – wir melden uns!"); }}>
+            {sent ? (
+              <div className="bg-card border border-border p-10">
+                <h3 className="text-2xl text-charcoal">Vielen Dank!</h3>
+                <p className="mt-3 text-muted-foreground">Wir haben deine Bewerbung erhalten und melden uns zeitnah bei dir.</p>
+              </div>
+            ) : (
+            <form className="bg-card border border-border p-8 md:p-10 space-y-5" onSubmit={handleSubmit}>
+            <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
             <div className="grid sm:grid-cols-2 gap-5">
               <Field label="Name" name="name" required />
               <Field label="E-Mail" name="email" type="email" required />
@@ -245,16 +302,18 @@ function Page() {
             </div>
             <div>
               <label className="block text-xs uppercase tracking-[0.2em] text-charcoal/70 mb-2">Lebenslauf (PDF)</label>
-              <input type="file" accept=".pdf" className="block w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:border file:border-border file:bg-background file:text-charcoal" />
+              <input type="file" name="cv" accept=".pdf" className="block w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:border file:border-border file:bg-background file:text-charcoal" />
             </div>
             <label className="flex items-start gap-3 text-xs text-muted-foreground">
               <input type="checkbox" required className="mt-1" />
               Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu.
             </label>
-            <button type="submit" className="w-full bg-charcoal text-background py-4 text-sm font-medium hover:bg-copper transition-colors">
-              Bewerbung absenden
+            {error && <p className="text-sm text-destructive" role="alert">{error}</p>}
+            <button type="submit" disabled={submitting} className="w-full bg-charcoal text-background py-4 text-sm font-medium hover:bg-copper transition-colors disabled:cursor-not-allowed disabled:opacity-60">
+              {submitting ? "Wird gesendet …" : "Bewerbung absenden"}
             </button>
             </form>
+            )}
           </Reveal>
         </div>
       </section>
