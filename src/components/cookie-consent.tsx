@@ -2,61 +2,22 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 
 const STORAGE_KEY = "cookie-consent-v2";
-const GTM_ID = "GTM-NSBLXKZR";
 
 type Consent = { statistics: boolean; marketing: boolean };
 
-function win() {
-  return window as unknown as { dataLayer?: unknown[]; __gtmLoaded?: boolean };
-}
-
 /**
- * gtag nach dem offiziellen Google-Muster: schiebt das `arguments`-Objekt in den
- * dataLayer (wichtig für Consent Mode). Die Signatur wird nach außen als
- * (...args) => void getypt, damit die Aufrufe typkorrekt sind.
+ * Aktualisiert den Google-Consent-Status. GTM selbst wird bereits im <head>
+ * (Consent Mode v2, Standard = „denied") geladen; hier melden wir nur die
+ * getroffene Auswahl pro Kategorie an Google.
  */
-const gtag = function () {
-  const w = win();
-  w.dataLayer = w.dataLayer || [];
-  // eslint-disable-next-line prefer-rest-params
-  w.dataLayer.push(arguments);
-} as (...args: unknown[]) => void;
-
-/** Google Consent Mode v2 – Standard: alles Nicht-Notwendige verweigert. */
-function setConsentDefault() {
-  gtag("consent", "default", {
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-    analytics_storage: "denied",
-    functionality_storage: "granted",
-    security_storage: "granted",
-    wait_for_update: 500,
-  });
-}
-
-/** Lädt GTM – bewusst erst, wenn mindestens eine Einwilligung vorliegt. */
-function loadGtm() {
-  const w = win();
-  if (w.__gtmLoaded) return;
-  w.__gtmLoaded = true;
-  w.dataLayer = w.dataLayer || [];
-  w.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
-  const s = document.createElement("script");
-  s.async = true;
-  s.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
-  const first = document.getElementsByTagName("script")[0];
-  first?.parentNode?.insertBefore(s, first);
-}
-
 function applyConsent(c: Consent) {
-  gtag("consent", "update", {
+  const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+  w.gtag?.("consent", "update", {
     analytics_storage: c.statistics ? "granted" : "denied",
     ad_storage: c.marketing ? "granted" : "denied",
     ad_user_data: c.marketing ? "granted" : "denied",
     ad_personalization: c.marketing ? "granted" : "denied",
   });
-  if (c.statistics || c.marketing) loadGtm();
 }
 
 function readConsent(): Consent | null {
@@ -85,13 +46,10 @@ export function CookieConsent() {
   const [marketing, setMarketing] = useState(false);
 
   useEffect(() => {
-    setConsentDefault();
-    const stored = readConsent();
-    if (stored) {
-      applyConsent(stored);
-    } else {
-      setOpen(true);
-    }
+    // Consent-Default + Wiederanwendung einer gespeicherten Auswahl passieren
+    // bereits im <head>-Init-Script (vor GTM). Hier nur den Banner zeigen,
+    // falls noch keine Entscheidung getroffen wurde.
+    if (!readConsent()) setOpen(true);
     const reopen = () => {
       const cur = readConsent();
       setStatistics(cur?.statistics ?? false);

@@ -13,6 +13,26 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CookieConsent } from "@/components/cookie-consent";
 
+const GTM_ID = "GTM-NSBLXKZR";
+
+/**
+ * Google Consent Mode v2 – wird VOR dem GTM-Loader ausgeführt.
+ * Standard = alles Nicht-Notwendige „denied". Eine bereits gespeicherte
+ * Auswahl (localStorage) wird sofort wieder angewendet, damit GTM/GA beim
+ * Laden den korrekten Einwilligungsstatus kennen. Getrackt wird also erst
+ * nach aktiver Einwilligung im Cookie-Banner.
+ */
+const CONSENT_INIT = `
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+try{var _c=JSON.parse(localStorage.getItem('cookie-consent-v2')||'null');if(_c){gtag('consent','update',{analytics_storage:_c.statistics?'granted':'denied',ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}}catch(e){}
+`.trim();
+
+/** Standard-GTM-Loader (Google-Snippet). Consent Mode regelt, was tatsächlich feuert. */
+const GTM_LOADER = `
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');
+`.trim();
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -102,9 +122,23 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        {/* Google Consent Mode v2 (Standard: denied) – muss vor GTM stehen */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_INIT }} />
+        {/* Google Tag Manager – statisch im Head, feuert aber erst nach Einwilligung (Consent Mode) */}
+        <script dangerouslySetInnerHTML={{ __html: GTM_LOADER }} />
         <HeadContent />
       </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="gtm"
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
